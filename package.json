@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
+    "@visx/axis": "file:visx/brush@visx/curve@visx/gradient@visx/group@visx/mock-data@visx/pattern@visx/responsive@visx/scale@visx/shape@visx/vendor",
     "@visx/visx": "^3.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
