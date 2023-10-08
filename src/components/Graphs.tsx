@@ -5,7 +5,7 @@ export default function Graphs() {
 
   return (
     <div className='flex justify-center flex-col items-center'>
-      <Chart width={1200} height={600}/>
+      <Chart width={1600} height={600}/>
       <h1 className="text-orange-500">Tony Number One</h1>
       <div style={{width: "800px"}}><canvas id="acquisitions"></canvas></div>
       
