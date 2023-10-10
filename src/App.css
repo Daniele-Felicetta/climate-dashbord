@@ -6,6 +6,8 @@
     background: linear-gradient(rgba(255,255,255,.2),
     rgba(255,255,255,.2)),
     url("assets/earth.gif"); 
-    background-repeat: repeat;
-    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: aliceblue;
 }

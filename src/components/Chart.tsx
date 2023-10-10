@@ -33,20 +33,24 @@ export default function Chart({type, width, height, icon}:Props) {
     let plusWidth = 300;
 
     if(window.innerWidth<1200){
-      plusHeight=400
+      plusHeight=300
       plusWidth= 150
-    }
-    
+    }   
     if(window.innerWidth<600){
-      plusHeight= 500
-      plusWidth= 100
+      plusHeight= 300
+      plusWidth= 50
+    }
+    if(window.innerHeight<600){
+      plusHeight=200;
+    }
+    if(window.innerHeight<400){
+      plusHeight=160
     }
     const [winWidth, setWinWidth]= useState(window.innerWidth-plusWidth)
     const [winHeight, setWinHeight]= useState(window.innerHeight-plusHeight)
 
     useEffect(()=>{
       const handleResize = () => {
-      
         setWinWidth(window.innerWidth-plusWidth)
         setWinHeight(window.innerHeight-plusHeight)
       }
@@ -58,6 +62,7 @@ export default function Chart({type, width, height, icon}:Props) {
     width=winWidth
     height=winHeight;
   }
+
   
   useEffect(()=>{
     const fetchData= async()=>{
@@ -107,7 +112,7 @@ export default function Chart({type, width, height, icon}:Props) {
       {!icon &&
         <>
           <XAxis dataKey={xKey}/>
-          <Tooltip content={<CustomTooltip />}/>
+          <Tooltip content={<CustomTooltip type={type}/>}/>
           <CartesianGrid  stroke="#ccc"/>
         </>
        }
@@ -116,11 +121,29 @@ export default function Chart({type, width, height, icon}:Props) {
     </div>
   )
 }
-const CustomTooltip = ({ active, payload, label }:any) => {
+
+interface PropsTooltip{
+  active: boolean,
+  payload: any,
+  label: string,
+  type: string
+}
+
+const CustomTooltip = ({ active, payload, label,type }:PropsTooltip) => {
   if (active && payload && payload.length) {
+    function tip(){
+      switch(type){
+        case "temperature":
+          return <p className="label">{`${label} : ${payload[0].value}°`}</p>
+        case "arctic":
+          return <p className="label">{`${label} : ${payload[0].value}km2`}</p>
+        default:
+          return <p className="label">{`${label} : ${payload[0].value}ppm`}</p>
+      }
+    }
     return (
       <div className="bg-slate-200 p-5 rounded-3xl opacity-90">
-        <p className="label">{`${label} : ${payload[0].value}°`}</p>
+        {tip()}
       </div>
     );
   }

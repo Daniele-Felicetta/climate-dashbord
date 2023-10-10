@@ -9,11 +9,31 @@ interface Props{
 }
 
 export default function Graphs() {
-  const width=500;
-  const height=300;
-  return (
+    
+    const [winWidth, setWinWidth]= useState(window.innerWidth)
+    const [winHeight, setWinHeight]= useState(window.innerHeight)
 
-      <div className="flex flex-wrap justify-evenly gap-10 mt-10 ">
+    useEffect(()=>{
+      const handleResize = () => {
+        if(window.innerWidth<800){
+          setWinWidth(window.innerWidth)
+          setWinHeight(window.innerHeight)
+        }
+      }
+      window.addEventListener('resize', handleResize)
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      }
+    },[winWidth, winHeight]);
+  let width=500;
+  let height=280;
+  if(window.innerWidth<800){
+    width=winWidth/1.2;
+    height=winHeight/6;
+  }
+  return (
+    <>
+      <div className="flex flex-wrap justify-evenly gap-16 mt-10 ">
         <div className='curse bg-slate-200 rounded-2xl'>
           <Link className='w-full z-50 h-full cursor-pointer' to="/temperature"> 
             <Chart type="temperature" width={width} height={height} icon={true}/>
@@ -40,7 +60,7 @@ export default function Graphs() {
           </Link>
         </div>
       </div>
-
+    </>
   )
   
 }
