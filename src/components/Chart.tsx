@@ -6,6 +6,7 @@ interface Props{
   type: string
   width: number,
   height: number,
+  icon?: boolean
 }
 type Transformable = {
   [key: string]: any;
@@ -22,7 +23,7 @@ function minMax(data:Transformable, ref:string){
     max:parseFloat(Math.max(...items).toFixed(2))
   }
 }
-export default function Chart({type, width, height}:Props) {
+export default function Chart({type, width, height, icon}:Props) {
   const [data,setData] = useState<Data[]>([]);
 
   useEffect(()=>{
@@ -51,11 +52,11 @@ export default function Chart({type, width, height}:Props) {
   }
   const min:number = minMax(data,zKey).min;
   const max:number = minMax(data,zKey).max;
-  
+
   return (
-    <>
+    <div>
     <br />
-    <h1 className="capitalize">{type}</h1>
+    <h1 className="capitalize text-center">{type}</h1>
     <br />
       <AreaChart width={width} height={height} data={data}>
         <defs>
@@ -69,12 +70,15 @@ export default function Chart({type, width, height}:Props) {
           </linearGradient>
         </defs>
         <Area type="monotone" dataKey={zKey} stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-        <CartesianGrid stroke="#CCCCCC"/>
-        <XAxis dataKey={xKey}/>
-        <YAxis dataKey={yKey} type={"number"} domain={[min,max]} />
-        <Tooltip content={<CustomTooltip />}/>
+        <YAxis hide={icon ?true:false} dataKey={yKey} type={"number"} domain={[min,max]} />
+      {!icon &&
+        <>
+          <XAxis dataKey={xKey}/>
+          <Tooltip content={<CustomTooltip />}/>
+        </>
+       }
       </AreaChart>
-    </>
+    </div>
   )
 }
 const CustomTooltip = ({ active, payload, label }:any) => {
