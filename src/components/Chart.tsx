@@ -23,9 +23,42 @@ function minMax(data:Transformable, ref:string){
     max:parseFloat(Math.max(...items).toFixed(2))
   }
 }
-export default function Chart({type, width=1200, height=600, icon}:Props) {
+
+
+export default function Chart({type, width, height, icon}:Props) {
   const [data,setData] = useState<Data[]>([]);
 
+  if(!width || !height) {
+    let plusHeight = 300;
+    let plusWidth = 300;
+
+    if(window.innerWidth<1200){
+      plusHeight=400
+      plusWidth= 150
+    }
+    
+    if(window.innerWidth<600){
+      plusHeight= 500
+      plusWidth= 100
+    }
+    const [winWidth, setWinWidth]= useState(window.innerWidth-plusWidth)
+    const [winHeight, setWinHeight]= useState(window.innerHeight-plusHeight)
+
+    useEffect(()=>{
+      const handleResize = () => {
+      
+        setWinWidth(window.innerWidth-plusWidth)
+        setWinHeight(window.innerHeight-plusHeight)
+      }
+      window.addEventListener('resize', handleResize)
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      }
+    },[winWidth, winHeight]);
+    width=winWidth
+    height=winHeight;
+  }
+  
   useEffect(()=>{
     const fetchData= async()=>{
       const datas= await getData(type);
