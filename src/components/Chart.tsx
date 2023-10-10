@@ -51,7 +51,7 @@ export default function Chart({type, width, height}:Props) {
   }
   const min:number = minMax(data,zKey).min;
   const max:number = minMax(data,zKey).max;
-  console.log(data)
+  
   return (
     <>
     <br />
