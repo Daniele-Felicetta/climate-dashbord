@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 interface Props{
   type: string
-  width: number,
-  height: number,
+  width?: number,
+  height?: number,
   icon?: boolean
 }
 type Transformable = {
@@ -23,7 +23,7 @@ function minMax(data:Transformable, ref:string){
     max:parseFloat(Math.max(...items).toFixed(2))
   }
 }
-export default function Chart({type, width, height, icon}:Props) {
+export default function Chart({type, width=1200, height=600, icon}:Props) {
   const [data,setData] = useState<Data[]>([]);
 
   useEffect(()=>{
@@ -56,7 +56,7 @@ export default function Chart({type, width, height, icon}:Props) {
   return (
     <div>
     <br />
-    <h1 className="capitalize text-center">{type}</h1>
+    <h1 className="capitalize text-center text-xl">{type}</h1>
     <br />
       <AreaChart width={width} height={height} data={data}>
         <defs>
@@ -70,13 +70,15 @@ export default function Chart({type, width, height, icon}:Props) {
           </linearGradient>
         </defs>
         <Area type="monotone" dataKey={zKey} stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-        <YAxis hide={icon ?true:false} dataKey={yKey} type={"number"} domain={[min,max]} />
+        <YAxis hide={icon ?true:false} tickCount={7} dataKey={yKey} type={"number"} domain={[min,max]} />
       {!icon &&
         <>
           <XAxis dataKey={xKey}/>
           <Tooltip content={<CustomTooltip />}/>
+          <CartesianGrid  stroke="#ccc"/>
         </>
        }
+
       </AreaChart>
     </div>
   )
