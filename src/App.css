@@ -11,3 +11,13 @@
     background-position: center;
     color: aliceblue;
 }
+p>a{
+    color:blueviolet;
+}
+body{
+    /* background-color: rgb(40, 38, 40);
+    color: white; */
+}
+section{
+    color:black
+}

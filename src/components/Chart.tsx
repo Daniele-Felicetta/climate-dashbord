@@ -1,4 +1,4 @@
-import { AreaChart, Area, CartesianGrid, XAxis,YAxis, Tooltip, Legend} from "recharts"
+import { AreaChart, Area, CartesianGrid, XAxis,YAxis, Tooltip} from "recharts"
 import getData from "./datas"
 import { useEffect, useState } from "react";
 
@@ -129,7 +129,7 @@ interface PropsTooltip{
   type: string
 }
 
-const CustomTooltip = ({ active, payload, label,type }:PropsTooltip) => {
+const CustomTooltip = ({ active, payload, label,type }:any) => {
   if (active && payload && payload.length) {
     function tip(){
       switch(type){
