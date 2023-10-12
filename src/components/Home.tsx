@@ -24,13 +24,13 @@ export default function Home() {
   }
   
   return (
-    <div className="home h-[91.4vh] flex justify-evenly items-center">
-        <div className="-mt-30 h-96 w-3/6 bg-slate-200 rounded-xl opacity-90">
-          <h1 className="text-4xl text-center text-black">Introduzione</h1>
+    <div className="home h-[91.4vh] flex justify-evenly items-center ">
+        <section className="-mt-30 p-5 h-96 w-3/6  bg-slate-200 rounded-xl opacity-90">
+          <h1 className="text-4xl text-center ">Intro</h1>
           <p>
-            
+            Kebab Kebab Kebab
           </p>
-        </div>
+        </section>
     </div>
   )
 }

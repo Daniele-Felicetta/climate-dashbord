@@ -90,7 +90,7 @@ export default function Chart({type, width, height, icon}:Props) {
   }
   const min:number = minMax(data,zKey).min;
   const max:number = minMax(data,zKey).max;
-
+  console.log(data);
   return (
     <div>
     <br />
@@ -108,7 +108,7 @@ export default function Chart({type, width, height, icon}:Props) {
           </linearGradient>
         </defs>
         <Area type="monotone" dataKey={zKey} stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-        <YAxis hide={icon ?true:false} tickCount={7} dataKey={yKey} type={"number"} domain={[min,max]} />
+        <YAxis hide={icon ? true : false} tickCount={7} dataKey={yKey} type={"number"} domain={[min,max]} />
       {!icon &&
         <>
           <XAxis dataKey={xKey}/>
