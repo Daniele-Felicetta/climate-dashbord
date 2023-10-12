@@ -5,7 +5,8 @@ export default function Nitrous() {
         <div className="flex justify-center">
             <Chart type="nitrous-oxide" />
         </div>
-        <div className="w-[92vw] p-20">
+        <div className="w-[90vw] p-5 pt-20 lg:p-20">
+
             <p>
                 Nitrous oxide is a gas that is produced by the combustion
                 of fossil fuel and solid waste, nitrogen-base fertilizers,

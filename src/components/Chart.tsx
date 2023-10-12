@@ -93,31 +93,31 @@ export default function Chart({type, width, height, icon}:Props) {
   console.log(data);
   return (
     <div>
-    <br />
-    <h1 className="capitalize text-center text-xl">{type}</h1>
-    <br />
-      <AreaChart width={width} height={height} data={data}>
-        <defs>
-          <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
-            <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
-          </linearGradient>
-          <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
-            <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
-          </linearGradient>
-        </defs>
-        <Area type="monotone" dataKey={zKey} stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-        <YAxis hide={icon ? true : false} tickCount={7} dataKey={yKey} type={"number"} domain={[min,max]} />
-      {!icon &&
-        <>
-          <XAxis dataKey={xKey}/>
-          <Tooltip content={<CustomTooltip type={type}/>}/>
-          <CartesianGrid  stroke="#ccc"/>
-        </>
-       }
+      <br />
+      <h1 className="capitalize text-center text-xl">{type}</h1>
+      <br />
+        <AreaChart width={width} height={height} data={data}>
+          <defs>
+            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
+              <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
+            </linearGradient>
+            <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
+              <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+            </linearGradient>
+          </defs>
+          <Area type="monotone" dataKey={zKey} stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
+          <YAxis hide={icon ? true : false} tickCount={7} dataKey={yKey} type={"number"} domain={[min,max]} />
+        {!icon &&
+          <>
+            <XAxis dataKey={xKey}/>
+            <Tooltip content={<CustomTooltip type={type}/>}/>
+            <CartesianGrid  stroke="#ccc"/>
+          </>
+        }
 
-      </AreaChart>
+        </AreaChart>
     </div>
   )
 }

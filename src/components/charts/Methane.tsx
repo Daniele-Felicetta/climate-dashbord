@@ -6,7 +6,8 @@ export default function Methane() {
         <div className="flex justify-center">
             <Chart type="methane" />
         </div>
-        <div className="w-[90vw] p-20">
+        <div className="w-[90vw] p-5 pt-20 lg:p-20">
+
             <p>
                 Methane is a flammable gas formed by geological and biological 
                 processes. Some of the natural ones are leaks from natural gas 
