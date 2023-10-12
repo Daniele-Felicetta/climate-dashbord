@@ -1,4 +1,4 @@
-import Chart from './Chart';
+import Chart from './components/Chart';
 import {useState,useEffect} from "react"
 import { Link} from 'react-router-dom'
 
@@ -28,10 +28,9 @@ export default function Graphs() {
   }
   
   return (
-    <>
-      <div className="flex flex-wrap justify-evenly gap-16 mt-10 ">
-        <button className='curse  rounded-2xl'>
-          <Link className='w-full z-50 h-full' to="/temperature"> 
+      <div className="flex flex-wrap justify-evenly gap-16 mt-10  ">
+        <button className=' rounded-2xl'>
+          <Link to="/temperature"> 
             <Chart type="temperature" width={width} height={height} icon={true}/>
           </Link>
         </button>
@@ -56,7 +55,6 @@ export default function Graphs() {
           </Link>
         </button>
       </div>
-    </>
   )
   
 }

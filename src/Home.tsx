@@ -1,4 +1,4 @@
-import getData from "./datas"
+import getData from "./components/datas"
 
 export default function Home() {
   const dataStorage= localStorage.getItem("data")
@@ -24,11 +24,12 @@ export default function Home() {
   }
   
   return (
-    <div className="home h-[91.4vh] flex justify-evenly items-center ">
-        <section className="-mt-30 p-5 h-96 w-3/6  bg-slate-200 rounded-xl opacity-90">
+    <div className="home h-[calc(100vh-80px)] flex justify-evenly items-center ">
+        <section className="-mt-32 p-5 sm:h-72 w-5/6 h-96 md:w-4/6 lg:w-3/6 bg-slate-200 rounded-xl opacity-90">
           <h1 className="text-4xl text-center ">Intro</h1>
-          <p>
-            Kebab Kebab Kebab
+          <p className=" md:mt-10 lg:text-2xl text-xl mt-5 ">
+          Climate is a topic that has been talked about a lot lately, as it directly and indirectly affects our lives.
+          This site collects data from <a href="https://global-warming.org" target="_blank" rel="noopener noreferrer" >global-warming.org</a> in reference to various anomalies on a decadal and even secular basis
           </p>
         </section>
     </div>
