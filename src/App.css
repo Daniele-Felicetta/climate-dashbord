@@ -12,12 +12,40 @@
     color: aliceblue;
 }
 p>a{
-    color:blueviolet;
+    color:rgb(138, 92, 182);
 }
-body{
-    /* background-color: rgb(40, 38, 40);
-    color: white; */
+
+.light-mode {
+    background-color: rgb(240, 240, 240);
+    color: black;
 }
-section{
-    color:black
+.light-mode div button{
+    background-color: rgb(234, 234, 246);
+}
+.light-mode nav button{
+    background-color: rgb(240, 240, 240);
+}
+
+.dark-mode {
+    background-color: rgb(13, 13, 13);
+    color: rgb(248, 248, 248);
+}
+
+.dark-mode nav a:hover{
+    background-color: rgb(58, 58, 58);
+}
+
+.dark-mode nav button:hover{
+    background-color: rgb(58, 58, 58);
+}
+
+.dark-mode div button{
+    background-color: rgb(50, 50, 57);
+}
+.dark-mode nav button{
+    background-color: rgb(13, 13, 13);
+}
+.dark-mode .tooltip{
+    background-color: rgb(38, 38, 41);
+
 }

@@ -142,7 +142,7 @@ const CustomTooltip = ({ active, payload, label,type }:any) => {
       }
     }
     return (
-      <div className="bg-slate-200 p-5 rounded-3xl opacity-90">
+      <div className="tooltip bg-slate-200 p-5 rounded-3xl opacity-90">
         {tip()}
       </div>
     );

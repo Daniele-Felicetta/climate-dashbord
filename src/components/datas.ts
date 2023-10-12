@@ -20,26 +20,38 @@ function dataTransform(input: Transformable,exclude:string[],target?:string ){
 }
 
 export default async function getData(type:string){
-    try{
-        const data = await fetch(`https://global-warming.org/api/${type}-api`);
-        const response= await data.json();
-        switch(type){
-            case "temperature":
-                return dataTransform(response.result,[],"time")
-            case "co2":
-                return dataTransform(response.co2, ["month","day"])
-            case "methane":
-                return dataTransform(response.methane,[],"date")
-            case "nitrous-oxide":
-                return dataTransform(response.nitrous,[],"date")
-            case"arctic":
-                return dataTransform(response.arcticData,["Column1","month","data-type","hemishpere","rank"]);
-            default:
-                return response[type]
+    const dataStorage= localStorage.getItem("data")
+    if(!dataStorage){
+        try{
+            const data = await fetch(`https://global-warming.org/api/${type}-api`);
+            const response= await data.json();
+            switch(type){
+                case "temperature":
+                    return dataTransform(response.result,[],"time")
+                case "co2":
+                    return dataTransform(response.co2, ["month","day"])
+                case "methane":
+                    return dataTransform(response.methane,[],"date")
+                case "nitrous-oxide":
+                    return dataTransform(response.nitrous,[],"date")
+                case"arctic":
+                    return dataTransform(response.arcticData,["Column1","month","data-type","hemishpere","rank"]);
+                default:
+                    return response[type]
+            }
+        }
+        catch(err){
+            console.log(err);
+            throw err;
         }
     }
-    catch(err){
-        console.log(err);
-        throw err;
-    }
+    else{
+        const toObject= JSON.parse(dataStorage);
+        if(type!="nitrous-oxide"){
+            return toObject[type];
+        }
+        else{
+            return toObject.nitrousOxide;
+        }
+    };
 }
