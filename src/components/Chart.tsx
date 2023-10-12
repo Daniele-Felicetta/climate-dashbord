@@ -122,12 +122,12 @@ export default function Chart({type, width, height, icon}:Props) {
   )
 }
 
-interface PropsTooltip{
-  active: boolean,
-  payload: any,
-  label: string,
-  type: string
-}
+// interface PropsTooltip{
+//   active: boolean,
+//   payload: any,
+//   label: string,
+//   type: string
+// }
 
 const CustomTooltip = ({ active, payload, label,type }:any) => {
   if (active && payload && payload.length) {
