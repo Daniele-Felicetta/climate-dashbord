@@ -28,18 +28,18 @@ export default function Methane() {
             </p>
             <p>
                 <span>For more information about the methane situation please visit: </span>  
-                <a href="https://www.epa.gov/ghgemissions/overview-greenhouse-gases#methane">
+                <a href="https://www.epa.gov/ghgemissions/overview-greenhouse-gases#methane" target="_blank" rel="noopener noreferrer">
                 EPA: Methane Emissions
                 </a>
                 <span> and </span>
-                <a href="https://earthobservatory.nasa.gov/images/146978/methane-emissions-continue-to-rise">
+                <a href="https://earthobservatory.nasa.gov/images/146978/methane-emissions-continue-to-rise" target="_blank" rel="noopener noreferrer">
                 NASA: Methane Emissions Continue to Rise.
                 </a>  
             </p>
             <p>
             For more information about the prehistoric methane concentration, please visit:
             <span> </span>  
-            <a href="https://www.nature.com/articles/nature06950">
+            <a href="https://www.nature.com/articles/nature06950" target="_blank" rel="noopener noreferrer">
             Orbital and millennial-scale features of atmospheric CH4 over the past 800,000 years.
             </a>  
             </p>

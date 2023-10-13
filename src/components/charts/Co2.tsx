@@ -22,11 +22,11 @@ export default function Co2() {
                 For more information about prehistoric CO2 concentration, 
                 current and future consequences please visit: 
                 <span> </span>  
-                <a href="https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide">
+                <a href="https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide" target="_blank" rel="noopener noreferrer">
                     Climate Change: Atmospheric Carbon Dioxide 
                 </a>
                 <span> and </span>
-                <a href="https://climate.nasa.gov/climate_resources/24/graphic-the-relentless-rise-of-carbon-dioxide/">
+                <a href="https://climate.nasa.gov/climate_resources/24/graphic-the-relentless-rise-of-carbon-dioxide/" target="_blank" rel="noopener noreferrer">
                     The relentless rise of carbon dioxide.
                 </a>  
             </p>

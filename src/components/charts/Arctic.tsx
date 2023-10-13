@@ -23,7 +23,7 @@ export default function Arctic() {
                 <p>
                     For more details please visit:
                     <span> </span>  
-                    <a href="https://www.npolar.no/en/themes/climate-change-in-the-arctic/#toggle-id-8">
+                    <a href="https://www.npolar.no/en/themes/climate-change-in-the-arctic/#toggle-id-8" target="_blank" rel="noopener noreferrer">
                         Climate change in the Arctic
                     </a>
                     <span> and </span>

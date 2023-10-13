@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import Home from './Home';
 import Graphs from './Graphs';
-import About from './components/About';
+import About from './About';
 import Temperature from './components/charts/Temperature';
 import Co2 from './components/charts/Co2';
 import Methane from './components/charts/Methane';

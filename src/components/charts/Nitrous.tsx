@@ -20,11 +20,11 @@ export default function Nitrous() {
             </p>
             <p>
                 <span>For more detailed information please visit: </span>  
-                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3306630/">
+                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3306630/" target="_blank" rel="noopener noreferrer">
                     Stratospheric ozone depletion due to nitrous oxide: influences of other gases 
                 </a>
                 <span> and </span>
-                <a href="https://www.epa.gov/ghgemissions/overview-greenhouse-gases#nitrous-oxide">
+                <a href="https://www.epa.gov/ghgemissions/overview-greenhouse-gases#nitrous-oxide" target="_blank" rel="noopener noreferrer">
                     EPA: Nitrous Oxide Emissions.
                 </a>  
                 </p>
