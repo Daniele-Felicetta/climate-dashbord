@@ -90,11 +90,13 @@ export default function Chart({type, width, height, icon}:Props) {
   }
   const min:number = minMax(data,zKey).min;
   const max:number = minMax(data,zKey).max;
-  console.log(data);
   return (
     <div>
       <br />
-      <h1 className="capitalize text-center text-xl">{type}</h1>
+
+      {icon ? <h2 className="capitalize text-center text-xl">{type}</h2>
+        :   <h1 className="uppercase text-center text-3xl">{type}</h1>
+      }
       <br />
         <AreaChart width={width} height={height} data={data}>
           <defs>

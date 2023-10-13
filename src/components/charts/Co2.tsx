@@ -7,7 +7,7 @@ export default function Co2() {
             <Chart type="co2" />
     
         </div>
-        <div className="w-[90vw] p-5 pt-20 lg:p-20">
+        <div className="w-[90vw] p-5 pt-10 lg:p-20 lg:pt-10">
 
             <p>
                 For thousands of years, the natural concentration of CO2 in earth

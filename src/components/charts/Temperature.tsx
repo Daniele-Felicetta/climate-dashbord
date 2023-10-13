@@ -5,7 +5,8 @@ export default function Temperature() {
       <div className="flex justify-center">
           <Chart type="temperature" />
       </div>
-      <div className="w-[90vw] p-5 pt-20 lg:p-20">
+      <div className="w-[90vw] p-5 pt-10 lg:p-20 lg:pt-10">
+
         <p>
             The current global warming rate is not natural. 
             From 1880 to 1981 was (0.07°C / 0.13°F) per decade.

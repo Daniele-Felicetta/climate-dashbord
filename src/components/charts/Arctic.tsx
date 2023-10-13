@@ -5,7 +5,8 @@ export default function Arctic() {
             <div className="flex justify-center">
                 <Chart type="arctic" />
             </div>
-                <div className="w-[90vw] p-5 pt-20 lg:p-20">
+            <div className="w-[90vw] p-5 pt-10 lg:p-20 lg:pt-10">
+
                 <p>
                     The arctic is warming around twice as fast as global average. 
                     Some of the reasons for this are: The arctic amplification, 

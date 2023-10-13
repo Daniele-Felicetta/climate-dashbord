@@ -28,7 +28,7 @@ export default function Graphs() {
   }
   
   return (
-      <div className="flex flex-wrap justify-evenly gap-16 mt-10  ">
+      <div className="flex flex-wrap justify-evenly gap-16 mt-10  pb-10">
         <button className=' rounded-2xl'>
           <Link to="/temperature"> 
             <Chart type="temperature" width={width} height={height} icon={true}/>
