@@ -1,4 +1,4 @@
-# climate-dashbord
+# Climate Dashbord
 A dashboard for looking at graphs related to climate change
 
 # Demo
